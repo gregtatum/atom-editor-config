@@ -1,0 +1,498 @@
+@background: #151515;
+@white: #F8F8F8;
+@tan: #CDA869;
+@blue: #7587A6;
+@green: #8F9D6A;
+@brown: #9B703F;
+@purple: #9B859D;
+@gray: #5F5A60;
+@red: #CF6A4C;
+@yellow: #F9EE98;
+@beige: #a67f75;
+
+.editor, .editor .gutter {
+  background-color: @background;
+  color: @white;
+}
+
+.editor.is-focused .cursor {
+  border-color: #A7A7A7;
+}
+
+.editor.is-focused .selection .region {
+  background-color: rgba(221, 240, 255, 0.2);
+}
+
+.editor.is-focused .line-number.cursor-line-no-selection, .editor.is-focused .line.cursor-line {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.editor .invisible-character,
+.editor .indent-guide {
+  color: rgba(197, 200, 198, 0.1);
+}
+
+.editor .invisible-character {
+  font-weight: normal !important;
+  font-style: normal !important;
+}
+
+.deco.folding {
+  color: #5A6A65;
+}
+
+.syntax--comment {
+  font-style: italic;
+  color: @gray;
+}
+
+.syntax--constant {
+  color: @red;
+}
+
+.syntax--entity {
+  color: @brown;
+}
+
+.syntax--keyword {
+  color: @tan;
+}
+
+.syntax--storage {
+  color: @yellow;
+}
+
+.syntax--string {
+  color: @green;
+}
+
+.syntax--support {
+  color: @purple;
+}
+
+.syntax--variable {
+  color: @blue;
+}
+
+.syntax--invalid.syntax--deprecated {
+  font-style: italic;
+  text-decoration: underline;
+  color: #D2A8A1;
+}
+
+.syntax--invalid.syntax--illegal {
+  color: @white;
+  background-color: rgba(86, 45, 86, 0.75);
+}
+
+.syntax--meta.syntax--embedded.syntax--block, .syntax--punctuation.syntax--whitespace.syntax--embedded {
+  background-color: rgba(176, 179, 186, 0.08);
+}
+
+.syntax--meta.syntax--embedded.syntax--line {
+  background-color: rgba(177, 179, 186, 0.13);
+}
+
+.syntax--entity.syntax--other.syntax--inherited-class {
+  font-style: italic;
+  color: #9B5C2E;
+}
+
+.syntax--string .syntax--meta.syntax--embedded {
+  color: #DAEFA3;
+}
+
+.syntax--string .syntax--constant {
+  color: #DDF2A4;
+}
+
+.syntax--string.syntax--regexp {
+  color: #E9C062;
+}
+
+.syntax--string.syntax--regexp .syntax--constant.syntax--character.syntax--escape,
+.syntax--string.syntax--regexp .syntax--source.syntax--ruby.syntax--embedded,
+.syntax--string.syntax--regexp .syntax--string.syntax--regexp.syntax--arbitrary-repitition {
+  color: #CF7D34;
+}
+
+.syntax--string .syntax--variable {
+  color: #8A9A95;
+}
+
+.syntax--support.syntax--function {
+  color: #DAD085;
+}
+
+.syntax--support.syntax--constant {
+  color: @red;
+}
+
+.syntax--meta.syntax--preprocessor.c {
+  color: #8996A8;
+}
+
+.syntax--meta.syntax--preprocessor.c .keyword {
+  color: #AFC4DB;
+}
+
+.syntax--meta.tag.sgml.doctype,
+.syntax--meta.tag.sgml.doctype .entity,
+.syntax--meta.tag.sgml.doctype .keyword,
+.syntax--meta.tag.sgml.doctype .syntax--variable,
+.syntax--meta.tag.sgml.doctype .syntax--string,
+.syntax--meta.tag.syntax--preprocessor.xml,
+.syntax--meta.tag.syntax--preprocessor.xml .entity,
+.syntax--meta.tag.syntax--preprocessor.xml .syntax--string {
+  color: #494949;
+}
+
+.declaration.tag,
+.declaration.tag .entity,
+.syntax--meta.tag,
+.syntax--meta.tag .entity {
+  color: #AC885B;
+}
+
+.declaration.tag.inline,
+.declaration.tag.inline .entity,
+.source .entity.name.tag,
+.source .entity.other.attribute-name,
+.syntax--meta.tag.inline,
+.syntax--meta.tag.inline .entity {
+  color: #E0C589;
+}
+
+.syntax--meta.selector.css .entity.name.tag {
+  color: @tan;
+}
+
+.syntax--meta.selector.css .entity.other.attribute-name.tag.pseudo-class {
+  color: @green;
+}
+
+.syntax--meta.selector.css .entity.other.attribute-name.id {
+  color: #8B98AB;
+}
+
+.syntax--meta.selector.css .entity.other.attribute-name.class {
+  color: @brown;
+}
+
+.syntax--support.type.property-name.css {
+  color: #C5AF75;
+}
+
+.syntax--meta.property-group .syntax--support.syntax--constant.property-value.css, .syntax--meta.property-value .syntax--support.syntax--constant.property-value.css {
+  color: @yellow;
+}
+
+.syntax--meta.syntax--preprocessor.at-rule .keyword.control.at-rule {
+  color: #8693A5;
+}
+
+.syntax--meta.property-value .syntax--support.syntax--constant.named-color.css, .syntax--meta.property-value .syntax--constant {
+  color: #CA7840;
+}
+
+.syntax--meta.constructor.argument.css {
+  color: @green;
+}
+
+.syntax--meta.diff, .syntax--meta.diff.header, .syntax--meta.separator, .syntax--meta.diff.range, .syntax--meta.diff.index {
+  font-style: italic;
+  color: @white;
+  background-color: #0E2231;
+}
+
+.syntax--markup.deleted {
+  color: @white;
+  background-color: #420E09;
+}
+
+.syntax--markup.changed {
+  color: @white;
+  background-color: #4A410D;
+}
+
+.syntax--markup.inserted {
+  color: @white;
+  background-color: #253B22;
+}
+
+.syntax--markup.list {
+  color: @yellow;
+}
+
+.syntax--markup.heading {
+  color: @red;
+}
+
+.syntax--markup.raw.block {
+  background-color: rgba(176, 179, 186, 0.08);
+}
+
+.syntax--string.syntax--unquoted {
+  color: @brown;
+}
+
+.syntax--property {
+  color: @red;
+}
+
+.syntax--module.syntax--control {
+  color: @purple;
+}
+
+.syntax--storage + .syntax--readwrite {
+  color: @red;
+}
+.syntax--readwrite {
+  color: @white;
+}
+
+.syntax--property {
+  color: @beige;
+}
+
+.syntax--shorthandpropertyname {
+  color: @brown;
+}
+
+.syntax--storage + .syntax--brace ~ .syntax--readwrite {
+  // Match foo and bar in `const { foo, bar } = baz`
+  color: @red;
+}
+.syntax--storage + .syntax--brace ~ .syntax--readwrite ~ .syntax--assignment ~ .syntax--readwrite {
+  // Match baz in `const { foo, bar } = baz`
+  color: @white;
+}
+.syntax--js.syntax--tag {
+  // Some kind of killer selector is overriding here, so blast it away.
+  color: @purple !important;
+}
+.syntax--numeric {
+  color: @purple;
+}
+
+//-----------------------------------------
+// Custom editor stuff
+
+@narrowFont: 'Archivo Narrow';
+
+/* Search results */
+.results-view {
+  li.list-nested-item > .list-item {
+      background-color: #3B434A;
+      color: #5BA1E8;
+  }
+  li:not(.list-nested-item) {
+      color: #BACCDE;
+      font-size: 1.1em;
+      line-height: 16px;
+  }
+  .list-tree {
+      margin: 0;
+      .selected::before {
+          background-color: #181818;
+      }
+  }
+
+  li.list-nested-item > .list-item {
+      background-color: rgba(74, 73, 70, 0.69);
+      border-top: 1px solid #63573D;
+      box-shadow: 0 0.2em 0em rgba(0, 0, 0, 0.2);
+  }
+  li.list-nested-item.selected::before {
+    background-color: #CA783E;
+    height:16px;
+  }
+}
+.highlight-info {
+    font-weight: normal;
+    padding: 2px;
+    margin: -1px;
+}
+
+
+/* Tree view enhancements */
+.list-tree.has-collapsable-cildren .list-nested-item > .list-tree > li, .list-tree.has-collapsable-children .list-nested-item > .list-group > li {
+  padding-left: 12px;
+}
+.list-tree.has-collapsable-children .list-nested-item > .list-tree > li, .list-tree.has-collapsable-children .list-nested-item > .list-group > li {
+  padding-left: 15px;
+}
+li.directory.entry.list-nested-item.expanded:after {
+    border-left: 3px solid rgba(255, 209, 209, 0.05);
+    content: "";
+    position: absolute;
+    left: 14px;
+    top: 23px;
+    bottom: 0em;
+}
+li.directory.entry.list-nested-item.project-root.expanded:after {
+    border-left:none;
+}
+.status-ignored .icon-file-directory:before {
+    color: #825544
+}
+li.directory.entry.list-nested-item.expanded {
+    position: relative;
+}
+.icon-file-directory {
+    color: @yellow;
+}
+.status-ignored .icon-file-directory {
+    color: rgb(142, 139, 119);
+}
+.full-menu, .multi-select {
+    background-color: #333230;
+    font-family:@narrowFont;
+    letter-spacing:0.02em;
+}
+.tree-view-resizer {
+  margin-left: -1.5em;
+}
+.list-group .icon::before,
+.list-tree .icon::before {
+    color: #CA783E;
+}
+.list-group .icon-file-directory::before,
+.list-tree .icon-file-directory::before {
+    color: #CF6A43;
+}
+.list-group li:not(.list-nested-item),
+.list-tree li:not(.list-nested-item),
+.list-group li.list-nested-item > .list-item,
+.list-tree li.list-nested-item > .list-item {
+    color: #ddd;
+}
+.status-modified > .list-item > .icon-file-directory::before {
+  color: #FF9D00;
+}
+.list-group .selected::before, .list-tree .selected::before {
+    height: 24px;
+}
+
+/* Invisible character tweak */
+atom-text-editor::shadow {
+  .invisible-character {
+    opacity:0.5;
+  }
+}
+
+/* Gutter */
+atom-text-editor::shadow {
+  .gutter {
+    background: #222;
+    border-right:4px solid #171717;
+  }
+  .gutter[gutter-name=linter] {
+    display:none;
+  }
+  .gutter[gutter-name=nuclide-breakpoint] {
+    display:none;
+  }
+  .gutter[gutter-name=nuclide-diagnostics-gutter] {
+    border-right: none;
+    background: #1d1d1d;
+    .custom-decorations {
+      top: 2px;
+      left: 0px;
+      position: relative;
+      opacity: 0.5;
+    }
+  }
+  .nuclide-diagnostics-gutter-ui-highlight-error > .region {
+    border-bottom: 1px dashed #c00a;
+  }
+  .line-number {
+    font-size:0.9em;
+    line-height:1.95;
+    opacity:1;
+    color:#444;
+    transition: color 100ms;
+    font-family: @narrowFont;
+    .icon-right {
+      margin: 0 4px 0 -4px;
+      position:relative;
+      left:2px;
+    }
+  }
+  .gutter:hover {
+    .line-number {
+      color:#666;
+      opacity:1;
+    }
+    .line-number.foldable .icon-right {
+      color:#CF6A43;
+    }
+  }
+  // Folded icon
+  .line-number.foldable .icon-right {
+    visibility: visible;
+    color:#964E32;
+    opacity:1;
+    cursor:pointer;
+  }
+
+}
+atom-text-editor::shadow .wrap-guide {
+  width: 1px;
+  background-color: #333;
+}
+.highlight-info {
+  background-color: rgba(207, 106, 67, 0.34);
+  color: #fff;
+}
+.search-result {
+  line-height: 16px !important;
+}
+.list-group .selected::before,
+.list-tree .selected::before {
+  height: 16px;
+}
+.panel-left .list-group .selected::before,
+.panel-left .list-tree .selected::before {
+  height: 24px;
+}
+
+.find-and-replace, .project-find {
+  padding: 0;
+  .header {
+    display: none;
+  }
+  atom-text-editor[mini] {
+    font-size: 12px;
+    line-height: 20px;
+    max-height: 22px;
+    border-color:#444;
+    background-color:#1a1a1a;
+    border-radius:0.5em;
+  }
+  .find-meta-container {
+    top: 1px;
+    right: 0;
+    margin: 5px 5px 0 0;
+    z-index: 2;
+    font-size: .9em;
+    line-height: 20px;
+    pointer-events: none;
+  }
+  .btn {
+    height: 20px;
+    line-height: 20px;
+  }
+  .input-block-item {
+    padding:1px 5px;
+  }
+}
+//-----------------------------
+
+.preview-pane .results-view {
+    padding: 0;
+}
+
+atom-pane-container atom-pane .item-views .pane-item {
+    background-color: #2B2B2B;
+}
