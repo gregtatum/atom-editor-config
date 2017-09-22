@@ -1,0 +1,41 @@
+"gl-engine":
+  title: "gl-engine"
+  paths: [
+    "/Users/gregorytatum/me/gl-engine"
+  ]
+  settings:
+    core:
+      ignoredNames: [
+        "build"
+      ]
+gecko:
+  title: "gecko"
+  paths: [
+    "/Users/gregorytatum/dev/gecko"
+  ]
+devtools:
+  title: "devtools"
+  paths: [
+    "/Users/gregorytatum/dev/gecko/devtools"
+  ]
+treemap:
+  title: "treemap"
+  paths: [
+    "/Users/gregorytatum/dev/treemap"
+  ]
+memory:
+  title: "memory"
+  paths: [
+    "/Users/gregorytatum/dev/gecko/devtools/client/memory"
+  ]
+greg:
+  title: "greg"
+  paths: [
+    "/Users/gregorytatum/me/greg"
+    "/Users/gregorytatum/me/greg/wp-content/themes/greg"
+  ]
+emgl:
+  title: "emgl"
+  paths: [
+    "/Users/gregorytatum/me/emgl"
+  ]

@@ -1,0 +1,394 @@
+'.source.js':
+  'console log':
+    'prefix' : 'cl'
+    'body' : 'console.log(${1})'
+  'f':
+    'prefix' : 'f'
+    'body' : """
+      function(${2}) {
+        ${3}
+      }${1}
+    """
+  'fill':
+    'prefix' : 'fill'
+    'body' : """
+      function fill (size, fn) {
+        const array = Array(size)
+        for (let i = 0; i < size; i++) {
+          array[i] = fn(i)
+        }
+        return array
+      }
+    """
+  'mapObj':
+    'prefix' : 'mapObj'
+    'body' : """
+      function mapObj (object, fn) {
+        let i = 0
+        const mappedObj = {}
+        for (let key in object) {
+          if (object.hasOwnProperty(key)) {
+            i++
+            mappedObj[key] = fn(object[key], key, i)
+          }
+        }
+        return mappedObj
+      }
+    """
+  'forEachObj':
+    'prefix' : 'forEachObj'
+    'body' : """
+      function forEachObj (object, fn) {
+        let i = 0
+        for (let key in object) {
+          if (object.hasOwnProperty(key)) {
+            i++
+            fn(object[key], key, i)
+          }
+        }
+      }
+    """
+  'reduceObj':
+    'prefix' : 'reduceObj'
+    'body' : """
+      function reduceObj (object, memo, fn) {
+        for (let key in object) {
+          if (object.hasOwnProperty(key)) {
+            i++
+            memo = fn(memo, object[key], key, i)
+          }
+        }
+        return memo
+      }
+    """
+  'fun':
+    'prefix' : 'fun'
+    'body' : """
+      function ${1:name} (${2}) {
+        ${0}
+      }
+    """
+
+  'Object.freeze':
+    'prefix' : 'frz'
+    'body' : """
+      Object.freeze($1
+    """
+
+  'debugger':
+    'prefix' : 'd'
+    'body' : """
+      debugger
+    """
+
+  'addEventListener':
+    'prefix' : '.on'
+    'body' : """
+      .addEventListener
+    """
+
+  'wait':
+    'prefix' : 'wait'
+    'body' : """
+      function wait(n) {
+        return new Promise(resolve => setTimeout(resolve, n));
+      }
+
+    """
+
+  'cleanStack':
+    'prefix' : 'cleanStack'
+    'body' : """
+      function cleanStack() {
+        let maxFnLength = 0
+        const tuples = (new Error()).stack
+          .trim()
+          .split('\\\\n')
+          .map(line => {
+            let [fn, path] = line.split(' -> ')
+            fn = fn.replace('@resource://gre/modules/commonjs/toolkit/loader.js', '')
+            maxFnLength = Math.max(fn.length, maxFnLength)
+            return [fn, path]
+          })
+
+        const paddedLines = tuples.map(([fn, path]) => fn.padEnd(maxFnLength, ' ') + ' -> ' + path)
+        paddedLines[0] = ""
+        return paddedLines.map((line) => {
+          if (line.indexOf("resource://gre/modules/Promise-backend") !== -1) {
+            return "<Promise>"
+          }
+          if (line.indexOf("resource://devtools/shared/task.js") !== -1) {
+            return "<Task>"
+          }
+          return line
+        }).join('\\\\n')
+      }
+    """
+
+  'cleanerStack':
+    'prefix' : 'cleanerStack'
+    'body' : """
+      function cleanerStack() {
+        let maxFnLength = 0
+        const tuples = (new Error()).stack
+          .trim()
+          .split('\\\\n')
+          .map(line => {
+            let [fn, path] = line.split(' -> ')
+            fn = fn.replace('@resource://gre/modules/commonjs/toolkit/loader.js', '')
+            maxFnLength = Math.max(fn.length, maxFnLength)
+            return [fn, path]
+          })
+
+        return tuples.map(([fn, path], index) => {
+          if (index === 0) {
+            return ""
+          }
+          if (path.indexOf("resource://gre/modules/Promise-backend") !== -1) {
+            return "<Promise>"
+          }
+          if (path.indexOf("resource://devtools/shared/task.js") !== -1) {
+            return "<Task>"
+          }
+          return fn
+        }).join('\\\\n')
+      }
+    """
+
+  'removeEventListener':
+    'prefix' : '.off'
+    'body' : """
+      .removeEventListener
+    """
+
+  'config':
+    'prefix' : 'config'
+    'body' : """
+      var config = _.extend({
+        ${1}
+      }, props)
+    """
+
+  'ed':
+    'prefix' : 'ed'
+    'body' : """
+      export default function ${1:name}(${2}) {
+        ${0}
+      }
+    """
+
+  'me':
+    'prefix' : 'me'
+    'body' : """
+      module.exports =
+    """
+
+  'for':
+    'prefix' : 'for'
+    'body' : """
+      for (let ${2:i} = 0; ${2:i} < ${1:array.length}; ${2:i}++) {
+        ${0}
+      }
+    """
+
+  'forin':
+    'prefix' : 'forin'
+    'body' : """
+      for (let ${1:key} in ${2:object}) {
+        if (${2:object}.hasOwnProperty(key)) {
+
+        }
+      }
+    """
+  'fn':
+    'prefix' : 'fn'
+    'body' : """
+      function _${1:name}Fn(${3}) {
+
+        return function ${2}${1:name}() {
+          ${4}
+        }
+      }
+    """
+
+  'i':
+    'prefix' : 'i'
+    'body' : """
+      import ${1:{ ${2:Feature} \}} from '${3:package}'
+    """
+
+  'lodash':
+    'prefix' : 'lodash'
+    'body' : """
+      var _ = require('lodash')
+    """
+  'ex':
+    'prefix' : 'ex'
+    'body' : """
+      module.exports =
+    """
+  'Promise':
+    'prefix' : 'Promise'
+    'body' : """
+      new Promise($2resolve$3 => {
+        $1$4
+      })
+    """
+  'r':
+    'prefix' : 'r'
+    'body' : """
+      require(${1})
+    """
+  '3.':
+    'prefix' : '3.'
+    'body' : """
+      THREE.
+    """
+  'vec2':
+    'prefix' : 'vec2'
+    'body' : """
+      new THREE.Vector2($1)
+    """
+  'vec3':
+    'prefix' : 'vec3'
+    'body' : """
+      new THREE.Vector3($1)
+    """
+  '.0':
+    'prefix' : '.0'
+    'body' : """
+      [0]
+    """
+  '.1':
+    'prefix' : '.1'
+    'body' : """
+      [1]
+    """
+  '.2':
+    'prefix' : '.2'
+    'body' : """
+      [2]
+    """
+  '.x':
+    'prefix' : '.x'
+    'body' : """
+      [0]
+    """
+  '.y':
+    'prefix' : '.y'
+    'body' : """
+      [1]
+    """
+  '.z':
+    'prefix' : '.z'
+    'body' : """
+      [2]
+    """
+  'switch':
+    'prefix' : 'switch'
+    'body' : """
+      switch (${1:expression}) {
+        case ${2:expression}:
+          $4
+        break;$5
+      }
+    """
+  'timeFn':
+    'prefix' : 'timeFn'
+    'body' : """
+      function timeFn (fn) {
+        var name = fn.name || 'anonymous ' + Math.floor(Math.random() * 10e7)
+        return function timed() {
+          console.time(name)
+          fn()
+          console.timeEnd(name)
+        }
+      }
+    """
+  'try':
+    'prefix' : 'try'
+    'body' : """
+      try {
+        $1
+      } catch (e) {$2}
+    """
+  'task':
+    'prefix' : 'task'
+    'body' : """
+      const { Task } = require("devtools/shared/task");
+    """
+  '$':
+    'prefix' : '$'
+    'body' : """
+      document.querySelector
+    """
+  '$$':
+    'prefix' : '$$'
+    'body' : """
+      document.querySelectorAll
+    """
+  'stack':
+    'prefix' : 'stack'
+    'body' : """
+      console.log((new Error()).stack);
+    """
+  'TAU':
+    'prefix' : 't'
+    'body' : """
+      const TAU = 6.283185307179586
+    """
+  'vert':
+    'prefix' : 'vert'
+    'body' : """
+      vert: glsl`
+        precision mediump float;
+        attribute vec3 normal, position;
+        uniform mat4 model, view, projection;
+
+        void main() {
+          gl_Position = projection * view * vec4(position, 1.0);
+        }
+      `,
+    """
+  'frag':
+    'prefix' : 'frag'
+    'body' : """
+      frag: glsl`
+        precision mediump float;
+
+        void main() {
+          gl_FragColor = vec4(0.5, 0.5, 0.5, 1.0);
+        }
+      `,
+    """
+  'unique':
+    'prefix' : 'unique'
+    'body' : """
+      function unique(value, index, self) {
+        return self.indexOf(value) === index
+      }
+    """
+
+'.source.html':
+  'style':
+    'prefix' : 'style'
+    'body' : """
+      <style>
+        $1
+      </style>
+    """
+
+'.source.rust':
+  'println':
+    'prefix' : 'p'
+    'body' : 'println!("{:?}", $1);'
+  'fn':
+    'prefix' : 'fn'
+    'body' : """
+      fn ${1:name} (${2}) {
+          ${0}
+      }
+    """
+  '{:?}':
+    'prefix' : '?'
+    'body' : '{:?}'

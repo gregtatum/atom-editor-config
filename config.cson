@@ -1,0 +1,136 @@
+"*":
+  "activate-power-mode":
+    comboMode:
+      enabled: false
+  "atom-dxr-search": {}
+  "autocomplete-plus":
+    backspaceTriggersAutocomplete: true
+    enableBuiltinProvider: false
+    includeCompletionsFromAllBuffers: false
+    minimumWordLength: 1
+  "bracket-matcher":
+    autocompleteBrackets: false
+    autocompleteSmartQuotes: false
+    wrapSelectionsInBrackets: false
+  core:
+    customFileTypes:
+      "source.ini": [
+        ".buckconfig"
+        ".hgrc"
+        ".flowconfig"
+      ]
+      "source.json": [
+        "BUCK.autodeps"
+      ]
+      "source.python": [
+        "BUCK"
+      ]
+    destroyEmptyPanes: false
+    disabledPackages: [
+      "welcome"
+      "select-rectangle"
+      "node-resolver"
+      "linter-js-standard"
+      "autocomplete-atom-api"
+      "autocomplete-css"
+      "autocomplete-html"
+      "autocomplete-snippets"
+      "language-mozillatest"
+      "linter"
+      "metrics"
+      "spell-check"
+      "timecop"
+      "language-javascript-jsx"
+      "gist-it"
+      "fast-eslint"
+      "background-tips"
+      "git-diff"
+      "image-view"
+      "open-on-github"
+      "atom-dxr-search"
+      "atom-alignment"
+      "atom-easy-jsdoc"
+      "file-types"
+      "fold-comments"
+      "language-htaccess"
+      "open-terminal-here"
+      "git-blame"
+      "autocomplete-plus"
+      "ide-flow"
+      "prettier-atom"
+      "activate-power-mode"
+      "intentions"
+      "linter-ui-default"
+      "github"
+    ]
+    ignoredNames: [
+      ".git"
+      ".hg"
+      ".svn"
+      ".DS_Store"
+      "._*"
+      "Thumbs.db"
+      "build"
+      "assets"
+      "bundle.js"
+    ]
+    packagesWithKeymapsDisabled: [
+      "atom-dxr-search"
+    ]
+    themes: [
+      "atom-dark-ui"
+      "twilight-greg"
+    ]
+  "ctags-status":
+    executablePath: "/usr/local/bin/ctags"
+  editor:
+    fontSize: 12
+    invisibles: {}
+    lineHeight: 1.8
+    preferredLineLength: 90
+    showIndentGuide: true
+    showInvisibles: true
+  "exception-reporting":
+    userId: "397b84b0-3370-dea1-bd54-8f57957830ff"
+  "file-types":
+    build: "source.python"
+  "language-babel":
+    taggedTemplateGrammar: [
+      "glsl:source.glsl"
+    ]
+  linter:
+    showErrorPanel: false
+  "linter-eslint":
+    fixOnSave: true
+    rulesToDisableWhileFixing: [
+      "no-debugger"
+    ]
+    rulesToSilenceWhileTyping: [
+      "no-debugger"
+    ]
+  "linter-ui-default":
+    panelHeight: 60
+  nuclide:
+    "nuclide-file-tree":
+      showOpenFiles: false
+      showUncommittedChanges: false
+    "nuclide-home":
+      showHome: false
+    use:
+      "nuclide-file-tree": false
+      "nuclide-objc": false
+      "nuclide-ocaml": false
+  "prettier-atom":
+    formatOnSaveOptions:
+      enabled: true
+    prettierOptions:
+      parser: "flow"
+      semi: false
+      singleQuote: true
+      trailingComma: "es5"
+  racer:
+    racerBinPath: "/Users/gregorytatum/.cargo/bin/racer"
+    rustSrcPath: "/usr/local/Cellar/rust/src/src"
+  tabs:
+    usePreviewTabs: true
+  "tree-view": {}

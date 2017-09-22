@@ -1,0 +1,22 @@
+'atom-text-editor':
+  'ctrl-w': 'find-and-replace:select-next'
+  'ctrl-e': 'find-and-replace:select-undo'
+  'alt-cmd-c': 'copy-path:copy-project-relative-path'
+
+'.platform-darwin':
+  'ctrl-9': 'tree-view:toggle-focus'
+'body':
+  'ctrl-cmd-w': 'pane:close-other-items'
+  'alt-cmd-j': 'window:focus-pane-on-left'
+  'alt-cmd-k': 'window:focus-pane-on-right'
+  'shift-cmd-j': 'window:move-active-item-to-pane-on-left'
+  'shift-cmd-k': 'window:move-active-item-to-pane-on-right'
+  'cmd-;': 'autocomplete-plus:activate'
+'body atom-text-editor.autocomplete-active':
+  'cmd-l': 'autocomplete-plus:move-up'
+  'cmd-;': 'autocomplete-plus:move-down'
+  'pageup': 'autocomplete-plus:page-up'
+  'pagedown': 'autocomplete-plus:page-down'
+  'home': 'autocomplete-plus:move-to-top'
+  'end': 'autocomplete-plus:move-to-bottom'
+  'space': 'autocomplete-plus:confirm'

@@ -1,0 +1,99 @@
+/**
+ * These styles wouldn't override in the theme. Try to keep this file light. Edit
+ * normally in ~/.atom/packages/twilight-greg/index.less
+ */
+
+@narrowFont: 'Archivo Narrow';
+
+/* Find and replace tighter in. */
+.find-and-replace, .project-find {
+  padding: 2px 0;
+  line-height: 1;
+  .header {
+    padding:0 inherit;
+    font-size:90%;
+  }
+  .header-item.description {
+    top: 3px;
+    position: relative;
+  }
+  .btn > .icon {
+    position: relative;
+    top: -1px;
+  }
+  .btn-group-options .btn {
+    width: 32px;
+    height: 18px
+  }
+}
+
+/* Tighter tabs */
+
+atom-pane-container atom-pane-axis.vertical > atom-pane-resize-handle {
+    height: 4px;
+    margin-top: -2px;
+}
+
+.tab-bar {
+    height: 32px;
+    font-family: @narrowFont;
+    letter-spacing: 0.02em;
+    .tab {
+        max-width: 220px;
+        top: 3px;
+        margin: 0 15px 0 5px;
+        transition: color 200ms;
+        .title { top: -1px; }
+        &:before { transform: skewX(-15deg); }
+        &:after { transform: skewX(15deg); }
+        &.active {
+          height: 25px;
+          &:before { height: 25px; }
+          &:after { height: 25px; }
+        }
+        &:nth-child(even):not(.active) {
+          color: #997;
+        }
+        .close-icon {
+          opacity: 0;
+          transition: opacity 200ms;
+        }
+        &.modified .close-icon {
+          opacity: 1;
+        }
+        &:hover {
+          color: #fff !important;
+          .close-icon {
+            opacity: 1;
+          }
+        }
+    }
+}
+
+/* Search results */
+.preview-pane {
+  .results-view {
+    .list-tree {
+      padding: 0;
+    }
+    li.list-nested-item {
+      &.selected::before {
+        height: 26px;
+      }
+      & > .list-item::before {
+        left: 5px !important;
+      }
+    }
+
+    .match-line {
+      line-height: 22px;
+      .preview {
+        color: #888;
+        font-size: 11px;
+      }
+      &.selected::before {
+        height: 23px;
+      }
+    }
+  }
+}
